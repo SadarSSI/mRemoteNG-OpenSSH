@@ -8,7 +8,6 @@ FileName = [PathTo]\mintty.exe
 Arguments =-d -o exec bash -cli "[PathTo]/mRemoteNG_OpenSSH.sh -h=%HOSTNAME% -u=%USERNAME% -p=%PORT%"
 FileName -> like a windows path
 Arguments -> like a cygwin path
-mRemoteNG-OpenSSH -> (see https://github.com/SadarSSI/mRemoteNG-OpenSSH/blob/main/mRemoteNG-OpenSSH.sh)
 
 Some explanations :
 If like me you have openssh with windows 10, you should have a .ssh folder located --> %userprofile%.ssh
@@ -20,7 +19,9 @@ in this case, make link from % userprofile%\.ssh\config file to /etc/ssh_config 
 \# ln -s $(cygpath $USERPROFILE)/.ssh/config /etc/ssh_config
 
 You can also make links from your files $USERPROFILE)/.ssh/xxx to ~/.ssh/xxx:
+
 \# mkdir ~ / .ssh ## if necessary
+
 \# ln -s $(cygpath $USERPROFILE)/.ssh/id_ed25519 ~/.ssh/id_ed25519
 \# ln -s $(cygpath $USERPROFILE)/.ssh/id_ed25519.pub ~/.ssh/id_ed25519.pub
 \# ln -s $(cygpath $USERPROFILE)/.ssh/authorized_keys ~/.ssh/authorized_keys
@@ -45,5 +46,3 @@ I use KeePass to store my ssh keys with passphrases and it works perfectly witho
 hope this helps while waiting for OpenSSH to work directly with mRemoteNG
 
 **) see https://superuser.com/questions/493270/ssh-config-under-cygwin
-
-
