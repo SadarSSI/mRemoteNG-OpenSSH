@@ -13,21 +13,22 @@ Some explanations :
 If like me you have openssh with windows 10, you should have a .ssh folder located --> %userprofile%.ssh
 
 You can see with the following cygwin command :
-\# ls $ (cygpath $USERPROFILE)/.ssh/config
+ - \# ls $ (cygpath $USERPROFILE)/.ssh/config
 
 in this case, make link from % userprofile%\.ssh\config file to /etc/ssh_config **) with this command :
-\# ln -s $(cygpath $USERPROFILE)/.ssh/config /etc/ssh_config
+ - \# ln -s $(cygpath $USERPROFILE)/.ssh/config /etc/ssh_config
 
 You can also make links from your files $USERPROFILE)/.ssh/xxx to ~/.ssh/xxx:
 
-\# mkdir ~ / .ssh ## if necessary
+ - \# mkdir ~ / .ssh ## if necessary
 
-\# ln -s $(cygpath $USERPROFILE)/.ssh/id_ed25519 ~/.ssh/id_ed25519
-\# ln -s $(cygpath $USERPROFILE)/.ssh/id_ed25519.pub ~/.ssh/id_ed25519.pub
-\# ln -s $(cygpath $USERPROFILE)/.ssh/authorized_keys ~/.ssh/authorized_keys
+ - \# ln -s $(cygpath $USERPROFILE)/.ssh/id_ed25519 ~/.ssh/id_ed25519
+ - \# ln -s $(cygpath $USERPROFILE)/.ssh/id_ed25519.pub ~/.ssh/id_ed25519.pub
+ - \# ln -s $(cygpath $USERPROFILE)/.ssh/authorized_keys ~/.ssh/authorized_keys
 
 NB: if you have admin rights on Windows you should be able to link to the directory. I do not have admin rights on my corporate windows 10 (...)
-\# ln -s $(cygpath $USERPROFILE)/.ssh ~/.ssh
+
+ - \# ln -s $(cygpath $USERPROFILE)/.ssh ~/.ssh
 
 For me the advantage of using openssh :
 
